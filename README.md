@@ -58,6 +58,7 @@ A simple command constructor that can flexibly construct complex statements
     builder2.SetClause("fields", "OrderId, UserId, Total");
     builder2.SetClause("Where", "total>=@total");
     builder2.AddParameter("total", 100);
+    
 
     builder1.SetClause("fields", "Id"); //set other fields of builder1,to be used in builder2
 

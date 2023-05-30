@@ -1,3 +1,8 @@
+//If there is anything strange, please understand, this is the first time I share the source code......
+//This source code was compiled by myself many years ago, and now it is mainly re-adapted with the help of chat gpt4, thank you OpenAI
+//You are free to use it in any project, no matter what the situation, just note the source
+
+
 using Microsoft.Data.SqlClient;
 using System.Data.Common;
 using System.Text.RegularExpressions;

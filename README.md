@@ -2,6 +2,7 @@
 A simple command constructor that can flexibly construct complex statements
 
 **Some properties are defined as follows**
+
   /// SQL template，like this: @"SELECT $fields  FROM Users WHERE $condition  $orderby";
   public string TemplateText { get; set; } = string.Empty!;
 
@@ -13,6 +14,7 @@ A simple command constructor that can flexibly construct complex statements
   public char Placeholder { get; set; } = '$'!;
 
 **Use example 1：**
+
     var builder = new SqlBuilder(SqlClientFactory.Instance);
     builder.TemplateText = "SELECT $fields FROM Users WHERE $condition";
     builder.SetClause("fields", "Id, Name, Email");
@@ -26,6 +28,7 @@ A simple command constructor that can flexibly construct complex statements
     var command = builder.BuildCommand();  
 
 **Use example 2：construct update commands**
+
     var builder3 = new SqlBuilder(SqlClientFactory.Instance);
     builder3.TemplateText = "UPDATE $table SET $fields WHERE $condition";
     builder3.SetClause("table", "Users");
@@ -37,6 +40,7 @@ A simple command constructor that can flexibly construct complex statements
     var command2 = builder3.BuildCommand();
     
 **Use example 3：nested subqueries**    
+
     var builder1 = new SqlBuilder(SqlClientFactory.Instance);
     builder1.TemplateText = @"SELECT $fields  FROM $table $condition  $orderby";
     builder1.SetClause("fields", "Id, Name, Email");

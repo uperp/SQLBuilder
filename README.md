@@ -46,7 +46,7 @@ A simple command constructor that can flexibly construct complex statements
     builder1.SetClause("fields", "Id, Name, Email");
     builder1.SetClause("table", "Users");
     builder1.SetClause("condition", "Where Age >= @age");
-   // builder1.SetClause("orderby", "Order by age");   //if not set, it will be replaced with empty string
+    builder1.SetClause("orderby", "Order by age");   //if not set, it will be replaced with empty string
     builder1.AddParameter("age", 18);
     var sql = builder1.BuildSql( );             //builder1 output: SELECT Id, Name, Email  FROM Users Where Age >= @age  
     var cmd=builder1.BuildCommand( );
